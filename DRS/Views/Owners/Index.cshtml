@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DRS.Models.Owner>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.owner_firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.owner_middlename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.owner_lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.owner_nic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.owner_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.owner_tele)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+            <td>
+                @Html.DisplayFor(modelItem => item.owner_firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner_middlename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner_lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner_nic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner_tele)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
